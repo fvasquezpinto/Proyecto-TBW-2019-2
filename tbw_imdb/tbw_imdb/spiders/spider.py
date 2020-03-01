@@ -105,7 +105,7 @@ class ImdbSpider(scrapy.Spider):
                 item["review"] = user_review
                 item["rate"] = user_rate
 
-            yield item
+                yield item
 
         load_more_reviews_query_key = response.xpath(
             "//div[@class='load-more-data'] /@data-key"

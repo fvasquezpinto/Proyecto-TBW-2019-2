@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 
 from datetime import date
+import re
 
 
 class TbwImdbPipeline(object):
     def process_item(self, item, spider):
 
-        text = "\n".join([item["rate"], item["review"]])
-        text = "".join([text, "\n\n"])
+        user_review = item["review"]
+        text = ";".join([item["rate"], re.sub("\n", "", user_review)])
+        text = "".join([text, "\n"])
 
         filename = "_".join(["IMDb_reviews", date.today().strftime("%d_%m_%Y")])
         filename = ".".join([filename, "txt"])
