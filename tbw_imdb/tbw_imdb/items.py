@@ -7,3 +7,9 @@ class TbwImdbItem(scrapy.Item):
 
     review = scrapy.Field()
     rate = scrapy.Field()
+
+
+class TbwFilmAffinityItem(scrapy.Item):
+
+    review = scrapy.Field()
+    rate = scrapy.Field()

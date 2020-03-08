@@ -13,7 +13,7 @@ class ImdbSpider(scrapy.Spider):
     # Clear today's file when scraper runs, so remember to save it before run
     filename = "_".join(["IMDb_reviews", date.today().strftime("%d_%m_%Y")])
     filename = ".".join([filename, "txt"])
-    file = open(filename, "w")
+    file = open(filename, "w", encoding='utf8')
     file.close()
 
     custom_settings = {
