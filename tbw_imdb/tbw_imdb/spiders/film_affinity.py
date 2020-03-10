@@ -7,7 +7,7 @@ import re
 from tbw_imdb.items import TbwFilmAffinityItem as Item
 
 
-class ImdbSpider(scrapy.Spider):
+class FilmAffinitySpider(scrapy.Spider):
 
     name = "film_affinity"
     base_url = "https://www.filmaffinity.com"
